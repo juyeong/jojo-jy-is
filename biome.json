@@ -1,0 +1,94 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.6.8/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "all",
+      "a11y": "error",
+      "complexity": "error",
+      "correctness": "error",
+      "performance": "error",
+      "security": "error",
+      "style": "error",
+      "suspicious": "error",
+      "nursery": "off"
+    },
+    "domains": {
+      "next": "all",
+      "react": "all",
+      "tailwind": "all",
+      "test": "all",
+      "project": "all",
+      "types": "all"
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": [
+        "next.config.ts",
+        "postcss.config.mjs",
+        "vitest.config.mts",
+        "src/app/**/page.tsx",
+        "src/app/**/layout.tsx"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "noDefaultExport": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["next.config.ts"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noNodejsModules": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/app/**/page.tsx", "src/app/**/layout.tsx"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useComponentExportOnlyModules": {
+              "level": "error",
+              "options": {
+                "allowExportNames": ["metadata"]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
