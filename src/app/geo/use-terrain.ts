@@ -14,7 +14,6 @@ export function useTerrain() {
       const hash = globalThis.location.hash.slice(1);
       const next = isTerrainTab(hash) ? hash : "battleground";
       setTab(next);
-      if (globalThis.location.hash !== `#${next}`) globalThis.location.hash = next;
     }
     readHash();
     globalThis.addEventListener("hashchange", readHash);
