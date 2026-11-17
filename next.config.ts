@@ -1,10 +1,7 @@
-import process from "node:process";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  turbopack: {
-    root: process.cwd(),
-  },
+  trailingSlash: true,
+  images: { unoptimized: true },
 };
-
 export default nextConfig;
