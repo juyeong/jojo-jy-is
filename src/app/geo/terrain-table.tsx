@@ -38,13 +38,13 @@ export function TerrainTable() {
     globalThis.location.hash = next;
   }
   return (
-    <div className="container-fluid geo-container">
-      <div className="page-title">
+    <div className="mx-auto w-full max-w-[900px] px-[15px] py-5">
+      <div className="mb-[30px] text-center">
         <strong>{TEXT.title}</strong>
       </div>
-      <div className="terrain-tabs">
+      <div className="mx-auto my-[10px] mb-[30px] text-center">
         <div
-          className="btn-group btn-group-sm"
+          className="relative inline-flex align-middle"
           role="group"
           aria-label="전장 선택"
         >
@@ -62,13 +62,13 @@ export function TerrainTable() {
           })}
         </div>
       </div>
-      <div className="table-responsive-lg text-center">
-        <table className="table">
+      <div className="block w-full overflow-x-auto text-center [-webkit-overflow-scrolling:touch]">
+        <table className="mb-4 w-full border-collapse text-center text-[14px] text-[#212529] max-[36em]:text-[12px]">
           <thead>
             <tr>
               {groups.map((group, index) => (
                 <td
-                  className={index % 2 === 1 ? "table-active" : undefined}
+                  className={`border-t border-[#dee2e6] px-3 py-3 align-top ${index % 2 === 1 ? "bg-[rgba(0,0,0,0.075)]" : ""}`}
                   key={group.type}
                   colSpan={group.fields.length}
                 >

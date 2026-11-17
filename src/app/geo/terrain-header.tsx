@@ -32,7 +32,7 @@ export function TerrainHeader({
   }
   return (
     <th
-      className={active ? "table-active sort" : "sort"}
+      className={`border-t border-b-2 border-[#dee2e6] px-3 py-3 align-bottom font-bold max-[36em]:text-[12px] ${active ? "bg-[rgba(0,0,0,0.075)]" : ""} cursor-pointer`}
       scope="col"
       aria-sort={direction}
       data-sort={field}
